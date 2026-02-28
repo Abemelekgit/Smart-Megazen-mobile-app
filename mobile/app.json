@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "Smart-Megazen",
+    "slug": "smart-megazen",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.smartmegazen.investor"
+    },
+    "android": {
+      "package": "com.smartmegazen.investor"
+    },
+    "plugins": ["expo-notifications"],
+    "scheme": "smart-megazen"
+  }
+}

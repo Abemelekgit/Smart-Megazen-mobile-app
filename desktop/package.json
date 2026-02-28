@@ -1,0 +1,47 @@
+{
+  "name": "smart-megazen-desktop",
+  "version": "1.0.0",
+  "description": "Smart-Megazen Command Center — Electron + React desktop app",
+  "main": "electron/main.js",
+  "homepage": "./",
+  "scripts": {
+    "dev":          "concurrently \"npm run dev:react\" \"wait-on http://localhost:3000 && npm run dev:electron\"",
+    "dev:react":    "react-scripts start",
+    "dev:electron": "ELECTRON_START_URL=http://localhost:3000 electron .",
+    "build":        "react-scripts build && electron-builder",
+    "build:react":  "react-scripts build"
+  },
+  "dependencies": {
+    "react":                   "^18.2.0",
+    "react-dom":               "^18.2.0",
+    "react-scripts":           "5.0.1",
+    "firebase":                "^10.12.0",
+    "lucide-react":            "^0.383.0",
+    "tailwindcss":             "^3.4.3",
+    "autoprefixer":            "^10.4.19",
+    "postcss":                 "^8.4.38",
+    "recharts":                "^2.12.7",
+    "date-fns":                "^3.6.0",
+    "clsx":                    "^2.1.1"
+  },
+  "devDependencies": {
+    "electron":               "^31.0.0",
+    "electron-builder":        "^24.13.3",
+    "concurrently":            "^8.2.2",
+    "wait-on":                 "^7.2.0",
+    "@types/react":            "^18.3.3"
+  },
+  "build": {
+    "appId":       "com.smartmegazen.desktop",
+    "productName": "Smart-Megazen Command Center",
+    "directories": { "output": "dist" },
+    "files":       ["build/**/*", "electron/**/*"],
+    "linux":       { "target": ["AppImage", "deb"] },
+    "win":         { "target": ["nsis"] },
+    "mac":         { "target": ["dmg"] }
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version"]
+  }
+}
